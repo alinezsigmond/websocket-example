@@ -1,0 +1,14 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "sqlite3": "^5.0.8",
+    "ws": "^8.8.0"
+  },
+  "scripts": {
+    "dev-backend": "node src/index.js",
+    "dev-vanderleia": "node src/vanderleia.js"
+  }
+}
