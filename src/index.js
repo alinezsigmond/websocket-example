@@ -19,12 +19,11 @@ wss.on("connection", (ws) => {
                 ws.send(value);
             })
             wss.clients.forEach(v => {
-                v.send("All data saved in Vanderleia");
+                ws.send("All data saved in Vanderleia");
             })
             return
         }
         const { message, latitude, longitude } = JSON.parse(dataString);
-        const hash = createHash("md5").update(`${message}${latitude}${longitude}`).digest("hex");
         const sql = `INSERT INTO localstorage (
             latitude, longitude, message)
             values (?, ?, ?)`

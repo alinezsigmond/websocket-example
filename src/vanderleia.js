@@ -49,6 +49,8 @@ server.once("listening", async () => {
         this.send("Hello darling, Vanderleia calling");
         this.on("message", async (data) => {
             const dataString = data.toString();
+        if (dataString == "All data saved in Vanderleia") return;
+
             const { message, latitude, longitude } = JSON.parse(dataString);
             const sql = `INSERT INTO vanderleia (
                 latitude, longitude, message)
