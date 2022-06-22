@@ -20,6 +20,7 @@ wss.on("connection", (ws) => {
             })
             wss.clients.forEach(v => {
                 ws.send("All data saved in Vanderleia");
+                arr.length=0;
             })
             return
         }
